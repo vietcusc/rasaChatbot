@@ -1,0 +1,44 @@
+intents:
+# Ý đồ khách hàng
+ - tra_cuu_hs
+ - thong_ke
+ - thong_ke_thangnam
+ - thong_ke_full
+ - tra_cuu_diachi
+
+entities:
+ - ma_hs
+ - thang_tk
+ - nam_tk
+ - don_vi
+
+slots:
+ ma_hs:
+  type: text
+ thang_tk:
+  type: text
+ nam_tk:
+  type: text
+ don_vi:
+  type: text
+
+responses:
+ utter_default:
+  - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách. "
+ utter_thong_ke:
+  - text: "Bạn muốn thông kê {don_vi} vào năm nào và tháng mấy?"
+  - text: "Bạn muốn thông kê {don_vi} vào năm nào và tháng mấy?"
+  - text: "Bạn cần thông kê của {don_vi} vào tháng năm nào?"
+
+actions:
+ - action_tra_cuu_hs
+ - utter_default
+ - action_thong_ke
+ - action_thong_ke_thangnam
+ - action_thong_ke_full
+ - action_tra_cuu_diachi
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
